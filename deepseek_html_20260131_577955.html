@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikita Patel | Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D399;
+            --dark: #2D2B55;
+            --light: #F5F7FF;
+            --gray: #6B7280;
+            --card-bg: #FFFFFF;
+            --section-bg: #F9FAFF;
+            --shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--card-bg);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo i {
+            margin-right: 8px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg, #f5f7ff 0%, #eef1ff 100%);
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            margin-bottom: 15px;
+        }
+        
+        .hero-content .highlight {
+            color: var(--primary);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        
+        .icon1 { top: 10%; left: 5%; }
+        .icon2 { top: 70%; right: 5%; }
+        .icon3 { bottom: 10%; left: 20%; }
+        
+        /* About Section */
+        .about {
+            background-color: var(--card-bg);
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .education-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .education-item h3 {
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+        
+        .education-item .date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .education-item .date i {
+            margin-right: 8px;
+        }
+        
+        .education-details {
+            margin-top: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-item i {
+            color: var(--accent);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: var(--section-bg);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .skill-level {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+        
+        .progress-80 { width: 80%; }
+        .progress-75 { width: 75%; }
+        .progress-85 { width: 85%; }
+        .progress-70 { width: 70%; }
+        .progress-90 { width: 90%; }
+        
+        /* Technology Section */
+        .technology {
+            background-color: var(--card-bg);
+        }
+        
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .tech-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--section-bg);
+            min-width: 100px;
+        }
+        
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .tech-icon i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: var(--section-bg);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding-right: 40px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+        
+        .timeline-content {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--card-bg);
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -10px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(odd):before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even):before {
+            left: -10px;
+        }
+        
+        .timeline-content .date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-content .date i {
+            margin-right: 8px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: var(--card-bg);
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: var(--section-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3.5rem;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tag {
+            background-color: var(--section-bg);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Blog Section */
+        .blog {
+            background-color: var(--section-bg);
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-img {
+            height: 180px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Activities Section */
+        .activities {
+            background-color: var(--card-bg);
+        }
+        
+        .activities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .activity-card {
+            background-color: var(--section-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .activity-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-about h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-container, .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero-content {
+                order: 2;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 50px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 50px;
+            }
+            
+            .timeline-item:nth-child(odd):before,
+            .timeline-item:nth-child(even):before {
+                left: 10px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:after,
+            .timeline-item:nth-child(even) .timeline-content:after {
+                left: -10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: var(--card-bg);
+                width: 80%;
+                height: calc(100vh - 70px);
+                text-align: center;
+                padding-top: 30px;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .tech-icons {
+                gap: 15px;
+            }
+            
+            .tech-icon i {
+                font-size: 2.5rem;
+            }
+            
+            .tech-icon {
+                min-width: 80px;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .skill-card, .activity-card {
+                padding: 20px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i> Nikita<span>Patel</span>
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#technology">Tech</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Nikita Patel</span></h1>
+                <h2>Aspiring Software Engineer</h2>
+                <p>I'm a passionate B.Tech student specializing in software development. Currently learning coding skills and building projects to create innovative digital solutions. I enjoy turning complex problems into simple, beautiful designs.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-icons">
+                    <div class="floating-icon icon1">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-icon icon2">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="floating-icon icon3">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+                <div class="profile-img-placeholder">
+                    <!-- Placeholder for profile image -->
+                    <div style="width:100%;height:400px;background:linear-gradient(135deg, var(--primary), var(--secondary));border-radius:20px;display:flex;align-items:center;justify-content:center;color:white;font-size:5rem;">
+                        NP
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="education-img">
+                        <!-- Placeholder for education image -->
+                        <div style="width:100%;height:400px;background:linear-gradient(135deg, #6C63FF, #36D399);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p>I'm a dedicated B.Tech student with a strong passion for software development and technology. I'm constantly learning and improving my skills to become a proficient software engineer.</p>
+                    
+                    <h3>Education</h3>
+                    
+                    <div class="education-item">
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2022 - Present</div>
+                        <p>Malwa Institute of Technology, Indore</p>
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>Pursuing Computer Science Engineering</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>Currently in 2nd Year</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>Higher Secondary (12th)</h3>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2022</div>
+                        <p>Beersheba English Medium Higher Secondary School, Pipariya</p>
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>Subjects: Physics, Chemistry, Mathematics (PCM)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-percentage"></i>
+                                <span>Score: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>Coding Training</h3>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2023 - Present</div>
+                        <p>Samyaak Institute, Indore</p>
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Learning Full Stack Development</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-code"></i>
+                                <span>Focus on Web Technologies and Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python Programming</h3>
+                    <p>Strong foundation in Python with knowledge of data structures, algorithms, and problem-solving.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress progress-80"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h3>Java Programming</h3>
+                    <p>Object-oriented programming concepts, Java fundamentals, and application development.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress progress-75"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML5, CSS3, JavaScript for building responsive and interactive websites.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress progress-85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Data analysis techniques, visualization, and interpretation using various tools.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress progress-70"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-file-excel"></i>
+                    <h3>MS Excel</h3>
+                    <p>Advanced Excel functions, formulas, data manipulation, and visualization.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress progress-90"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <h2>Technologies I Use</h2>
+            <div class="tech-icons">
+                <div class="tech-icon">
+                    <i class="devicon-python-plain colored"></i>
+                    <span class="tech-name">Python</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-java-plain colored"></i>
+                    <span class="tech-name">Java</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span class="tech-name">HTML5</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span class="tech-name">CSS3</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span class="tech-name">JavaScript</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-git-plain colored"></i>
+                    <span class="tech-name">Git</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-vscode-plain colored"></i>
+                    <span class="tech-name">VS Code</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-database"></i>
+                    <span class="tech-name">SQL</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="devicon-npm-original-wordmark colored"></i>
+                    <span class="tech-name">NPM</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="tech-name">Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Learning Journey & Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2023 - Present</div>
+                        <h3>Full Stack Development Training</h3>
+                        <h4>Samyaak Institute, Indore</h4>
+                        <p>Currently learning web development technologies including HTML, CSS, JavaScript, and backend concepts. Building projects to apply theoretical knowledge in practical scenarios.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2022 - Present</div>
+                        <h3>B.Tech in Computer Science</h3>
+                        <h4>Malwa Institute of Technology</h4>
+                        <p>Studying core computer science concepts including data structures, algorithms, database management, software engineering, and computer networks.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2022</div>
+                        <h3>Higher Secondary Education</h3>
+                        <h4>Beersheba English Medium School</h4>
+                        <p>Completed 12th with PCM subjects, scoring 85%. Developed strong analytical and problem-solving skills through mathematics and science.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2021</div>
+                        <h3>Self-Learning Journey</h3>
+                        <h4>Online Platforms & Resources</h4>
+                        <p>Started exploring programming through online resources, tutorials, and coding platforms to build foundational knowledge in software development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Student Task Manager</h3>
+                        <p>A Python-based application to help students organize assignments, set reminders, and track academic progress with a simple command-line interface.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">File I/O</span>
+                            <span class="tag">DateTime</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Scientific Calculator</h3>
+                        <p>A Java-based scientific calculator with GUI that performs basic and advanced mathematical operations including trigonometric functions.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Swing</span>
+                            <span class="tag">GUI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript to showcase projects, skills, and experience with modern design.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>My Blog</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-img" style="background:linear-gradient(135deg, #6C63FF, #36D399);">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>My Coding Journey</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Dec 15, 2023</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <p>Sharing my experiences learning to code from scratch, challenges faced, and how I overcome them as a computer science student.</p>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background:linear-gradient(135deg, #FF6584, #FFB347);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Data Analysis for Beginners</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
+                            <span><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p>Introduction to data analysis concepts and tools for students starting their journey in data science and analytics.</p>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background:linear-gradient(135deg, #36D399, #6C63FF);">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Balancing Studies & Coding</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 5, 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <p>Tips for managing time between college studies, coding practice, and personal projects effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities" id="activities">
+        <div class="container">
+            <h2>Extra-Curricular Activities</h2>
+            <div class="activities-container">
+                <div class="activity-card">
+                    <i class="fas fa-users"></i>
+                    <h3>College Coding Club</h3>
+                    <p>Active member of the college coding club, participating in coding competitions and tech workshops.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Community Service</h3>
+                    <p>Volunteered in local community tech literacy programs to teach basic computer skills to underprivileged students.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Hackathons</h3>
+                    <p>Participated in college-level hackathons, working in teams to develop innovative solutions within time constraints.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Self-Study & Research</h3>
+                    <p>Regularly explore new technologies and programming concepts through online courses and technical documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>Nikita Patel</h3>
+                    <p>Aspiring software engineer and B.Tech student passionate about creating innovative digital solutions through code.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#technology">Technologies</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Me</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>nikkiptl9516@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Indore, Madhya Pradesh</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-university"></i>
+                            <span>Malwa Institute of Technology</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-laptop-house"></i>
+                            <span>Samyaak Institute, Indore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Nikita Patel. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart" style="color:var(--secondary);"></i> by Nikita Patel</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Add animation to skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe skills section
+        const skillsSection = document.getElementById('skills');
+        if(skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
